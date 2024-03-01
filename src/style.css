@@ -1,0 +1,564 @@
+@font-face {
+	font-family: "Zen Kurenaido";
+	src: url("../assets/font/ZenKurenaido.ttf") format("truetype");
+}
+@page {
+	margin: 0;
+	size: A4 landscape;
+}
+
+.section {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	overflow: scroll;
+	user-select: none;
+}
+
+/* menu */
+#menu {
+	background-color: #88ccff;
+	user-select: none;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#menu h1 {
+	font-size: 4rem;
+	font-weight: 100;
+	color: #1f1e33;
+	text-shadow: 3px 3px 0 #7766ff;
+	-webkit-text-stroke: 1px #8877ff;
+	text-stroke: 1px #8877ff;
+}
+
+#menu #errormessage {
+	color: #883333;
+}
+
+#menu button {
+	font-size: 2rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 50vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#menu button.focused {
+	background-color: #777777;
+}
+
+#menu button[disabled] {
+	background-color: #883333;
+	text-decoration: line-through;
+}
+
+/* wizard */
+#wizard #resultframe {
+	overflow: scroll;
+	width: 100vw;
+	height: 70vh;
+	display: inline-block;
+	position: relative;
+}
+#wizard #resultframe #result {
+	/* A4横 */
+	width: 297mm;
+	height: 210mm;
+
+	margin: auto;
+	position: relative;
+	border: #000000 1px solid;
+}
+
+#wizard table {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+#wizard td.teacher {
+	padding: 5px;
+	font-size: auto;
+	border: #333333 2.5px solid;
+	border-collapse: collapse;
+	text-align: center;
+	width: 130px;
+	height: 30px;
+}
+
+#wizard td.used {
+	padding: 5px;
+	font-size: 0.75rem;
+	border: #333333 2.5px solid;
+	border-collapse: collapse;
+	text-align: center;
+	width: 130px;
+	height: 50px;
+}
+
+#wizard td.space {
+	padding: 5px;
+	text-align: center;
+	width: 125px;
+	height: 10px;
+}
+
+#wizard hr {
+	border-color: #3333ff;
+}
+
+#wizard button {
+	font-size: 2rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 30vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#wizard a {
+	text-decoration: none;
+	font-size: 2rem;
+	display: inline-block;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 30vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#wizard button.focused {
+	background-color: #777777;
+}
+
+/* print */
+#print {
+	/* A4横 */
+	width: 297mm;
+	height: 210mm;
+
+	margin: 0;
+}
+
+#print table {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+#print td.teacher {
+	padding: 5px;
+	font-size: auto;
+	border: #333333 2.5px solid;
+	border-collapse: collapse;
+	text-align: center;
+	width: 130px;
+	height: 30px;
+}
+
+#print td.used {
+	padding: 5px;
+	font-size: 0.75rem;
+	border: #333333 2.5px solid;
+	border-collapse: collapse;
+	text-align: center;
+	width: 130px;
+	height: 50px;
+}
+
+#print td.space {
+	padding: 5px;
+	text-align: center;
+	width: 125px;
+	height: 10px;
+}
+
+/* setting */
+#setting {
+	color: #333333;
+	background-color: #88ccff;
+	user-select: none;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#setting p {
+	font-size: 1.5rem;
+}
+
+#setting hr {
+	border-color: #3333ff;
+}
+
+#setting button {
+	font-size: 2rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 35vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#setting button.small {
+	width: 25vw;
+	font-size: 1.5rem;
+}
+
+#setting button.focused {
+	background-color: #777777;
+}
+
+#setting table {
+	margin: 10px auto;
+	border: #333333 2.5px solid;
+	border-collapse: collapse;
+}
+
+#setting th {
+	font-size: 2rem;
+	border: #333333 1px solid;
+}
+
+#setting td {
+	padding: 5px;
+	text-align: center;
+	width: 50px;
+	height: 30px;
+}
+
+#setting td.normalseat {
+	border: #333333 1px solid;
+	border-collapse: collapse;
+	background-color: #ffff88;
+}
+
+#setting td.frontseat {
+	border: #333333 1px solid;
+	border-collapse: collapse;
+	background-color: #ffaa88;
+}
+
+#setting span.normalseat::after {
+	display: inline-block;
+	content: "";
+	background-color: #ffff88;
+	border: #333333 1px solid;
+	vertical-align: sub;
+	width: 50px;
+	height: 30px;
+}
+
+#setting span.frontseat::after {
+	display: inline-block;
+	content: "";
+	background-color: #ffaa88;
+	border: #333333 1px solid;
+	vertical-align: sub;
+	width: 50px;
+	height: 30px;
+}
+
+#setting input[type="file"] {
+	display: none;
+}
+
+#setting label.button {
+	display: inline-block;
+	font-size: 1.5rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	text-decoration: none;
+	border-radius: 10px;
+	width: 25vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#setting a.button {
+	display: inline-block;
+	font-size: 1.5rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	text-decoration: none;
+	border-radius: 10px;
+	width: 25vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#setting a.button.disabled {
+	width: 25vw;
+	font-size: 1.5rem;
+	background-color: #883333;
+	text-decoration: line-through;
+}
+
+/* listsetting*/
+#listsetting {
+	color: #333333;
+	background-color: #88ccff;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#listsetting p {
+	font-size: 1.5rem;
+}
+
+#listsetting table {
+	margin: 10px auto;
+	border: #333333 2px solid;
+	border-collapse: collapse;
+}
+
+#listsetting th {
+	font-size: 0.9rem;
+	border: #333333 2px solid;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+	width: 120px;
+	height: 20px;
+}
+
+#listsetting td {
+	font-size: 0.8rem;
+	background-color: #ffffff55;
+	border: #333333 2px solid;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+	width: 120px;
+	height: 20px;
+}
+
+#listsetting td.isfront,
+#listsetting th.isfront {
+	width: 60px;
+}
+
+#listsetting td.buttons,
+#listsetting th.buttons {
+	width: 90px;
+}
+
+#listsetting td.name,
+#listsetting th.name {
+	width: 140px;
+}
+
+#listsetting td.number,
+#listsetting th.number {
+	width: 35px;
+}
+
+#listsetting hr {
+	border-color: #3333ff;
+}
+
+#listsetting button {
+	font-size: 1.2rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 35vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#listsetting .buttons a {
+	font-size: 1.5rem;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#listsetting button.focused {
+	background-color: #777777;
+}
+
+/* useradd */
+#useradd {
+	color: #333333;
+	background-color: #88ccff;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#useradd p {
+	font-size: 1.5rem;
+}
+
+#useradd table {
+	margin: 10px auto;
+	border: #333333 2px solid;
+	border-collapse: collapse;
+}
+
+#useradd td {
+	border: #333333 2px solid;
+	border-collapse: collapse;
+	padding-right: 5px;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 300;
+	width: 130px;
+	height: 30px;
+}
+
+#useradd hr {
+	border-color: #3333ff;
+}
+
+#useradd button {
+	font-size: 1.2rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 35vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#useradd button.focused {
+	background-color: #777777;
+}
+
+#useradd input[type="text"] {
+	background-color: #ffffff55;
+	border: none;
+	width: 100%;
+	height: 100%;
+	font-size: 1.4rem;
+}
+
+#useradd input[type="checkbox"] {
+	background-color: #ffffff55;
+	width: 100%;
+	height: 90%;
+	vertical-align: sub;
+}
+
+/* seatsetting */
+#seatsetting {
+	color: #333333;
+	background-color: #88ccff;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#seatsetting p {
+	font-size: 1.5rem;
+}
+
+#seatsetting table {
+	margin: 10px auto;
+	border: #333333 2px solid;
+	border-collapse: collapse;
+}
+
+#seatsetting th {
+	font-size: 2rem;
+}
+
+#seatsetting td {
+	background-color: #ffffff55;
+	border: #333333 2px solid;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+	width: 10vw;
+	height: 5vh;
+}
+
+#seatsetting td.normalseat {
+	background-color: #ffff88;
+}
+
+#seatsetting td.frontseat {
+	background-color: #ffaa88;
+}
+
+#seatsetting hr {
+	border-color: #3333ff;
+}
+
+#seatsetting select {
+	border: none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: none;
+}
+
+#seatsetting button {
+	font-size: 2rem;
+	color: #ffffff;
+	background-color: #555555;
+	border: none;
+	border-radius: 10px;
+	width: 30vw;
+	padding: 5px;
+	margin: 10px;
+	font-family: "Zen Kurenaido", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#seatsetting button.focused {
+	background-color: #777777;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta name="viewport" content="width=device-width" />
+		<title>席替え配置決定ソフトウェア SeatWizard</title>
+		<link rel="stylesheet" href="./style.css" />
+		<script src="./script.js"></script>
+	</head>
+	<body>
+		<div id="menu" class="section" style="display: none">
+			<h1>席替え配置決定ソフトウェア<br />SeatWizard</h1>
+			<button id="wizardbtn" onclick="modeChange('wizard_dummy')">
+				抽選する
+			</button><br />
+			<span id="errormessage"></span>
+			<br />
+			<button onclick="modeChange('setting')">設定</button>
+		</div>
+		<div id="wizard_dummy"></div>
+		<div id="wizard" class="section" style="display: none">
+			<span id="outputhiddenarea1"><h1>印刷プレビュー</h1></span>
+			<div id="resultframe"><div id="result"></div></div>
+			<span id="outputhiddenarea2">
+				<hr />
+				<a id="outputbtn">出力(PDF)</a>&emsp;<button
+					onclick="modeChange('menu')"
+				>
+					戻る
+				</button>
+			</span>
+		</div>
+		<div id="print" class="section" style="display: none">
+			<div id="printarea"></div>
+		</div>
+		<div id="setting" class="section" style="display: none">
+			<h1>名簿データ</h1>
+			<span id="userdatastate"></span><br />
+			<button class="small" onclick="modeChange('listsetting')">
+				名簿を変更する
+			</button>
+			<hr />
+			<h1>席配置</h1>
+			<div id="seatstate"></div>
+			<button class="small" onclick="modeChange('seatsetting')">
+				席配置を変更する
+			</button>
+			<hr />
+			<h1>設定ファイルインポート/エクスポート</h1>
+			<h2>名簿データのみ(CSVファイル)</h2>
+			<label class="button"
+				>インポート<input
+					type="file"
+					oninput="importCSV(this.files[0])"
+					accept="text/csv" /></label
+			>&nbsp;<a class="button" id="csvexport">エクスポート</a><br />
+			<h2>設定ファイル(jsonファイル)</h2>
+			<label class="button"
+				>インポート<input
+					type="file"
+					oninput="importJSON(this.files[0])"
+					accept="application/json" /></label
+			>&nbsp;<a class="button" id="jsonexport">エクスポート</a>
+			<hr />
+			<h1>初期化</h1>
+			<p>
+				クラス替え等で名簿や席配置が大きく変わる場合にご利用ください。
+			</p>
+			<button class="small" onclick="allReset()">初期化</button>
+			<hr />
+			<button onclick="modeChange('menu')">戻る</button>
+		</div>
+		<div id="listsetting" class="section" style="display: none">
+			<table id="listsettingtable"></table>
+			<button onclick="modeChange('useradd')">+ 生徒追加</button>
+			<hr />
+			<button onclick="modeChange('setting')">戻る</button>
+		</div>
+		<div id="useradd" class="section" style="display: none">
+			<table id="useraddtable">
+				<tr>
+					<td colspan="2">出席番号</td>
+					<td colspan="2"><input type="text" class="number" /></td>
+				</tr>
+				<tr>
+					<td>姓</td>
+					<td><input type="text" class="firstname" /></td>
+					<td>名</td>
+					<td><input type="text" class="lastname" /></td>
+				</tr>
+				<tr>
+					<td>姓(フリガナ)</td>
+					<td><input type="text" class="firstname" /></td>
+					<td>名(フリガナ)</td>
+					<td><input type="text" class="lastname" /></td>
+				</tr>
+				<tr>
+					<td>生徒会活動</td>
+					<td colspan="3"><input type="text" class="activity1" /></td>
+				</tr>
+				<tr>
+					<td>学習係</td>
+					<td colspan="3"><input type="text" class="activity2" /></td>
+				</tr>
+				<tr>
+					<td>部活動</td>
+					<td colspan="3"><input type="text" class="activity3" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">前席希望チェック</td>
+					<td colspan="2">
+						<input type="checkbox" class="isfront" />
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" class="edit" value="" />
+			<button onclick="userAdd()">登録</button>
+			<hr />
+			<button onclick="modeChange('listsetting')">キャンセル</button>
+		</div>
+		<div id="seatsetting" class="section" style="display: none">
+			<p>
+				※左上で詰めて登録してください。該当箇所をクリックして変更ができます。
+			</p>
+			<table id="seatsettingtable"></table>
+			<hr />
+			<button onclick="modeChange('setting')">戻る</button>
+		</div>
+	</body>
+</html>

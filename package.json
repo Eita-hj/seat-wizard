@@ -1,0 +1,58 @@
+{
+	"name": "seat-wizard",
+	"version": "1.0.0",
+	"description": "席替えの席を決定するソフトです。",
+	"main": "./src/main.js",
+	"scripts": {
+		"start": "electron ./src",
+		"build-mac": "electron-builder -m",
+		"build-win": "electron-builder -w",
+		"build-linux": "electron-builder -l",
+		"build-all": "electron-builder -wml"
+	},
+	"dependencies": {
+		"electron-store": "^8.1.0",
+		"node-fetch": "^2.7.0"
+	},
+	"devDependencies": {
+		"electron": "^28.1.4",
+		"electron-builder": "^24.9.1"
+	},
+	"build": {
+		"appId": "electron.seatwizard",
+		"productName": "SeatWizard",
+		"directories": {
+			"output": "dist"
+		},
+		"files": [
+			"assets",
+			"src",
+			"package.json",
+			"package-lock.json"
+		],
+		"linux": {
+			"icon": "assets/icons/icon.png",
+			"target": [
+				"AppImage"
+			],
+			"category": "Game"
+		},
+		"mac": {
+			"icon": "assets/icons/icon.icns",
+			"target": [
+				"dmg"
+			]
+		},
+		"win": {
+			"icon": "assets/icons/icon.ico",
+			"target": "nsis"
+		},
+		"nsis": {
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		},
+		"publish": null
+	},
+	"author": "eita <eita9661@gmail.com>",
+	"homepage": "https://seatwizard.eita.f5.si/"
+}
