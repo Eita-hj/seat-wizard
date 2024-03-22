@@ -54,7 +54,7 @@
 	font-style: normal;
 }
 
-#menu button.focused {
+#menu button:hover {
 	background-color: #777777;
 }
 
@@ -152,7 +152,11 @@
 	font-style: normal;
 }
 
-#wizard button.focused {
+#wizard button:hover {
+	background-color: #777777;
+}
+
+#wizard a:hover {
 	background-color: #777777;
 }
 
@@ -239,7 +243,7 @@
 	font-size: 1.5rem;
 }
 
-#setting button.focused {
+#setting button:hover {
 	background-color: #777777;
 }
 
@@ -327,6 +331,11 @@
 	font-family: "Zen Kurenaido", sans-serif;
 	font-weight: 400;
 	font-style: normal;
+}
+
+
+#setting .button:hover {
+	background-color: #777777;
 }
 
 #setting a.button.disabled {
@@ -420,7 +429,7 @@
 	text-decoration: none;
 }
 
-#listsetting button.focused {
+#listsetting button:hover {
 	background-color: #777777;
 }
 
@@ -472,7 +481,7 @@
 	font-style: normal;
 }
 
-#useradd button.focused {
+#useradd button:hover {
 	background-color: #777777;
 }
 
@@ -559,6 +568,6 @@
 	font-style: normal;
 }
 
-#seatsetting button.focused {
+#seatsetting button:hover {
 	background-color: #777777;
 }

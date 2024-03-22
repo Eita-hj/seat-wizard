@@ -9,7 +9,7 @@ app.setAboutPanelOptions({
 	applicationVersion: require("../package.json").version,
 	copyright: "©︎えいた",
 	authors: "えいた",
-	website: "https://seatwizard.eita.f5.si/",
+	website: "https://sw.pjeita.top/",
 });
 
 ipcMain.on("savedata", (e, obj) => {
@@ -38,7 +38,7 @@ app.once("ready", () => {
 	});
 	mainWindow.loadFile(path.join(__dirname, "index.html"));
 	mainWindow.once("ready-to-show", () => {
-		fetch("https://api.eita.f5.si/update", {
+		fetch("https://api.pjeita.top/update", {
 			method: "post",
 			headers: {
 				"Content-Type": "application/json",
@@ -116,6 +116,15 @@ app.once("ready", () => {
 						return buffer;
 					});
 				}
+			})
+			.catch(() => {
+				versionChecked = true;
+				dialog
+					.showErrorBox(
+						"更新確認エラー",
+						"更新確認サーバーとの接続に失敗しました。"
+					)
+				mainWindow.show();
 			});
 	});
 	mainWindow.on("close", () => {

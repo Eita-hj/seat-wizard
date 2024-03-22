@@ -2,14 +2,6 @@ let seatdata = [];
 let studentdata = [];
 
 window.onload = () => {
-	[...document.getElementsByTagName("button")].forEach((n) => {
-		n.onmouseover = (e) => {
-			if (!e.disabled) e.target.classList.add("focused");
-		};
-		n.onmouseleave = (e) => {
-			e.target.classList.remove("focused");
-		};
-	});
 	seatdata = electronAPI.loaddata("seat") || [
 		[0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0],

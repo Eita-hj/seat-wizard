@@ -1,6 +1,6 @@
 {
 	"name": "seat-wizard",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "席替えの席を決定するソフトです。",
 	"main": "./src/main.js",
 	"scripts": {
@@ -54,5 +54,5 @@
 		"publish": null
 	},
 	"author": "eita <eita9661@gmail.com>",
-	"homepage": "https://seatwizard.eita.f5.si/"
+	"homepage": "https://sw.pjeita.top/"
 }
