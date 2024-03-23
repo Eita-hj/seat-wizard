@@ -125,6 +125,22 @@ app.once("ready", () => {
 						"更新確認サーバーとの接続に失敗しました。"
 					)
 				mainWindow.show();
+
+				ipcMain.handle("output", async (e) => {
+					const buffer = await mainWindow.webContents.printToPDF({
+						landscape: true,
+						pageSize: "A4",
+						margins: {
+							top: 0,
+							bottom: 0,
+							left: 0,
+							right: 0,
+						},
+						printBackground: true,
+						pageRanges: "1",
+					});
+					return buffer;
+				});
 			});
 	});
 	mainWindow.on("close", () => {
